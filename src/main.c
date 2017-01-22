@@ -6,7 +6,7 @@ int main() {
 	u16 palette[16];
 
     // initialization
-    VDP_setScreenWidth320();
+	VDP_setScreenWidth320();
 
     // reset all four 16-color palettes to black, starting from PAL0
     VDP_setPaletteColors(PAL0, (u16 *)palette_black, 64);
@@ -23,7 +23,7 @@ int main() {
     // fade in (for all 16 colors in our palette fade from black to each color)
     VDP_fadeIn(0, 16 - 1, palette, 50, FALSE);
 
-	while (TRUE) {
+	while(TRUE) {
         VDP_waitVSync();
     }
 
