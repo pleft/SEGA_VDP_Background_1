@@ -1,0 +1,1 @@
+IMAGE background "background_rgt.png" 0

@@ -1,0 +1,16 @@
+== SEGA VDP, display a background image
+
+This Sega Mega Drive project shows how to display an image as background. It does just the bare minimum job, load the image and setup the palette. The background image is a simple drawin in `MSPaint`. It is converted to a valid, compatible with Mega Drive `png` image using the tool `RetroGraphicsToolkit` (RGT) which can be found https://github.com/ComputerNerd/Retro-Graphics-Toolkit[here].
+
+=== Instructions to create the background image
+. Draw an image or download one from the internet.
+. Open `RetroGraphicsToolkit` choose `File->Tile map->Import image to tilemap`.
+. Then `Tilemap actions->Generate optimal palette with x amount of colors`. In the dialog displayed press first `Preview` and then `Done`.
+. Then `Tilemap action->Dither tilemap as image`.
+. Finally save the converted image with `File->Tile map->Export tile mas as image`.
+
+=== Instructions to load the image resource
+. Put the converted image from RGT into the `res/` folder.
+. Create a file named `resources.res` and write a line with the following: `IMAGE background "background.png" 0` where `background.png` is the image filename.
+. Perform a project build (if project is setup according to https://github.com/pleft/SEGA_VSCode_Template[VSCode template]), just press `Ctrl-Shift-B` on `VSCode` editor.
+. A `resources.h` file should be created in `res/` folder. Include it in your `main.c` file and you are ready to use your newly created Image structure.
